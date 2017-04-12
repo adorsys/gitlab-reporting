@@ -1,0 +1,59 @@
+{{ define "content" }}
+<div class="row report report-wrapper">
+  <div class="col-lg-12 col-md-12">
+    <h2 class="report-projectname">{{.Project.Url}}/{{.Project.Project}}</h2>
+        <legend id="scroll-section1">Statistics <span class="fa fa-plus-square fa-lg pull-right hidectrl hidectrl-commitratio"></span></legend>
+        <div class="report reports report-commitratio hidden">
+            <ul class="report reports report-numbers">
+              <li class="report-li commit">
+                <p class="report-li-title">Number of all commits: <span class="pull-right">{{.NoOfCommits}}</span></p>
+              </li>
+              <li class="report-li commit">
+                <p class="report-li-title">Number of merge requests: <span class="pull-right">{{.NoOfMergeRequests}}</span></p>
+              </li>
+              <li class="report-li commit">
+                  <p class="report-li-title">Number of commits from merge requests: <span class="pull-right">{{.NoOfMergeRequestCommits}}</span></p>
+              </li>
+              <li class="report-li commit">
+                  <p class="report-li-title">Amount of commits from Merge Requests: <span class="pull-right">{{printf "%.2f%v" .AmountOfMergeRequestCommits "%" }}</span></p>
+              </li>
+            </ul>
+        </div>
+        <legend id="scroll-section2">Commits  <span class="count commit-count pull-right">{{.NoOfCommits}} <span class="fa fa-plus-square fa-lg hidectrl hidectrl-commits"></span></legend>
+        <div class="report reports report-commits hidden">
+          <ul class="report report-list">
+          {{range .Commits}}
+            <li class="report-li commit">
+              <div class="report-li-header">
+                <p class="commit-title"> <strong>{{.Title}}</strong> <!--<span class="fa fa-plus-square fa-lg pull-right hidectrl hidectrl-li"></span>--></p>
+                <p class="commit-author"> {{.AuthorName}}, {{.AuthorEmail}} at <span>{{.CreatedAt | fdate}}</span></p>
+                <p class="commit-message">Id: {{.Id}}</p>
+              </div>
+              <div class="report-li-div hidden">
+                <!-- Additional commit fields? -->
+              </div>
+            </li>
+          {{end}}
+          </ul>
+        </div>
+        <legend id="scroll-section3">Merge Requests  <span class="count mergerequest-count pull-right">{{.NoOfMergeRequests}} <span class="fa fa-plus-square fa-lg hidectrl hidectrl-mergerequests"></span></legend>
+        <div class="report reports report-mergerequests hidden">
+          <ul class="report report-list">
+          {{range .MergeRequests}}
+            <li class="report-li mergerequest">
+              <div class="report-li-header">
+                <p class="mergerequest-title"> <strong>{{.Title}}</strong> <!--<span class="fa fa-plus-square fa-lg  pull-right hidectrl hidectrl-li"></span>--></p>
+                <p class="mergerequest-author">{{.Author.Name}}, {{.Author.Username}} at <span>{{.CreatedAt | fdate}}</span></p>
+                <p class="mergerequest-assignee">Assigned from: {{.Assignee.Name}} {{.Assignee.Username}}</p>
+                <p class="mergerequest-id">Merge request Id: {{.Id}}</p>
+              </div>
+              <div class="report-li-div hidden">
+                <!-- Additional merge request fields? -->
+              </div>
+            </li>
+          {{end}}
+        </ul>
+        </div>
+  </div>
+</div>
+{{end}}

@@ -1,0 +1,88 @@
+.affix {
+  /*width: 213px;*/
+}
+
+@media (min-width: 1200px) {
+  .affix {
+    /*width: 263px;*/
+  }
+}
+
+.affix-bottom {
+  position: absolute;
+  /*width: 213px;*/
+}
+
+@media (min-width: 1200px) {
+  .affix-bottom {
+    /*width: 263px;*/
+  }
+}
+
+.nav{
+  left: 0;
+  background-color: rgba(32, 131, 192, 1.0);
+  height: 100%;
+}
+
+.sidebar-content{
+  width: 100%;
+}
+
+.sidebar-brand{
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 30px;
+}
+
+.sidebar-brand a:link {
+  color: rgba(255,234,334,1.0)
+}
+.sidebar-brand a:visited {
+  color: rgba(255,234,334,1.0)
+}
+.sidebar-brand a:hover {
+  text-decoration: none;
+  color: rgba(255,234,334,0.7)
+}
+.sidebar-brand a:active {
+  color: rgba(255,234,334,1.0)
+}
+
+.newproject-input-fields{
+  width: 100%;
+  margin-left: 10px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.newproject-input-fields input{
+  margin-bottom:  5px;
+  width: 100%;
+  color: black;
+  background-color: rgba(255,255,255,1.0);
+  border: none;
+}
+
+.scrollspy-links{
+  font-size: 16px;
+}
+
+.scrollspy-links a:link {
+  color: rgba(255,234,334,1.0)
+}
+.scrollspy-links a:visited {
+  color: rgba(255,234,334,1.0)
+}
+.scrollspy-links a:hover {
+  text-decoration: none;
+  color: rgba(255,234,334,0.7)
+}
+.scrollspy-links a:active {
+  color: rgba(255,234,334,1.0)
+}
+
+.scrollspy-links ul{
+  list-style: none;
+  font-style: italic;
+}

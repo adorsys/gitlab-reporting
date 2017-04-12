@@ -1,0 +1,37 @@
+{{ define "sidebar" }}
+<div id="nav" class="nav affix-top scrollspy" data-spy="affix">
+  <div class="row sidebar-content">
+    <div class="col-lg-12 col-md-12 sidebar-brand">
+      <a href="/">
+        <i class="fa fa-comments-o">GitLab Reporting</i>
+      </a>
+    </div>
+    <div class="scrollspy-links">
+      <ul>
+        <li><a href="#scroll-section1">Statistics</a></li>
+        <li><a href="#scroll-section2">Commits</a></li>
+        <li><a href="#scroll-section3">Merge Requests</a></li>
+      </ul>
+    </div>
+    <div class="col-lg-12 col-md-12 newproject-input-fields">
+      <form action="/createReport" method="post">
+        {{if .}}
+          <input class="newproject-url" type="text" name="url" value="{{.Project.Url}}" placeholder="Gitlab URL e.g. http://gitlab.example.com"><br>
+          <input class="newproject-name" type="text" name="project" value="{{.Project.Project}}" placeholder="namespace/projectname"><br>
+          <input class="newproject-token" type="text" name="token" value="{{.Project.Token}}" placeholder="Gitlab Token"><br>
+          <input class="newproject-branch" type="text" name="branch" value="{{.Project.Branch}}" placeholder="Optional: Branch"><br>
+          <input class="newproject-apiversion" type="text" name="apiversion" value="{{.Project.ApiVersion}}" placeholder="Optional: Gitlab Api Version"><br><br>
+          <input class="newproject-createreport" type="submit" value="Create Report">
+        {{else}}
+          <input class="newproject-url" type="text" name="url" placeholder="Gitlab URL e.g. http://gitlab.example.com"><br>
+          <input class="newproject-name" type="text" name="project" placeholder="namespace/projectname"><br>
+          <input class="newproject-token" type="text" name="token" placeholder="Gitlab Token"><br>
+          <input class="newproject-branch" type="text" name="branch" placeholder="Optional: Branch"><br>
+          <input class="newproject-apiversion" type="text" name="apiversion" placeholder="Optional: Gitlab Api Version"><br><br>
+          <input class="newproject-createreport" type="submit" value="Create Report">
+        {{end}}
+      </form>
+    </div>
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,71 @@
+
+
+.hidectrl{
+  color: rgba(31, 132, 191, 1.0);
+  padding-left: 5px;
+}
+
+.hidectrl:hover{
+  cursor: pointer;
+  color: rgba(31, 132, 191, 0.5);
+}
+
+.report-projectname{
+  padding-bottom: 30px;
+  color: rgba(31, 132, 191, 1.0);
+  font-style: italic;
+}
+
+legend{
+  color: rgba(31, 132, 191, 1.0);
+}
+
+.reports{
+  padding-bottom: 20px;
+}
+
+.report-list{
+  list-style: decimal;
+}
+
+.report-list li{
+  margin-bottom: -1px;
+  padding-top: 8px;
+  border-top-style: solid;
+  border-top-width: thin;
+  border-top-color: color: rgba(50,50,50, 0.2);
+
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  border-bottom-color: color: rgba(50,50,50, 0.2);
+}
+
+.count{
+  font-style: italic;
+  color: rgba(15,15,15, 0.4);
+}
+
+.report-li-header strong{
+  color: rgba(31, 132, 191, 1.0);
+  font-size: 16px;
+}
+
+.report-li-div{
+
+
+}
+
+.hidectrl-li{
+  margin-right: 15px;
+}
+
+.report-numbers{
+  list-style: none;
+}
+
+.report-numbers li{
+  padding-top: 8px;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  border-bottom-color: color: rgba(50,50,50, 0.2);
+}
