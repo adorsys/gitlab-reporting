@@ -7,6 +7,7 @@ import (
 
 func main() {
 	port := flag.String("port", "9090", "set the port where the tool shall run")
+	ip := flag.String("ip", "127.0.0.1", "set the ip adress where the tool shall run")
 	flag.Parse()
 
 	mux := http.NewServeMux()
@@ -15,7 +16,7 @@ func main() {
 	mux.HandleFunc("/", index)
 	mux.HandleFunc("/createReport", createReport)
 	server := &http.Server{
-		Addr:    "127.0.0.1:" + *port,
+		Addr:    *ip + ":" + *port,
 		Handler: mux,
 	}
 	server.ListenAndServe()

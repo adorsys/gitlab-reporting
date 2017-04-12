@@ -39,7 +39,12 @@ To use the tool you´ll need:
 - gitlab private token
 - project namespace/name
 
-## Change port
+## Change address
+
+To change the default ip adress execute tool with ip flag and the chosen adress
+```
+./../../../../bin/gitlab-reporting -ip {ip adress}
+```
 
 To change the default port execute tool with port flag and the chosen portnumber
 ```
