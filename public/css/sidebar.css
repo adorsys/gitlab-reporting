@@ -1,22 +1,6 @@
-.affix {
-  /*width: 213px;*/
-}
-
-@media (min-width: 1200px) {
-  .affix {
-    /*width: 263px;*/
-  }
-}
 
 .affix-bottom {
   position: absolute;
-  /*width: 213px;*/
-}
-
-@media (min-width: 1200px) {
-  .affix-bottom {
-    /*width: 263px;*/
-  }
 }
 
 .nav{
@@ -31,7 +15,7 @@
 
 .sidebar-brand{
   margin-top: 10px;
-  margin-left: 20px;
+  margin-left: 10px;
   font-size: 30px;
 }
 
@@ -51,9 +35,8 @@
 
 .newproject-input-fields{
   width: 100%;
-  margin-left: 10px;
+  margin-left: 5px;
   margin-top: 40px;
-  margin-bottom: 20px;
 }
 
 .newproject-input-fields input{
@@ -65,7 +48,17 @@
 }
 
 .scrollspy-links{
-  font-size: 16px;
+  margin-top: 30px;
+
+  border-bottom-width: thin;
+  border-bottom-color: rgba(255,255,255,0.7);
+  border-bottom-style: solid;
+
+  border-top-width: thin;
+  border-top-color: rgba(255,255,255,0.7);
+  border-top-style: solid;
+
+  font-size: 20px;
 }
 
 .scrollspy-links a:link {
@@ -85,4 +78,22 @@
 .scrollspy-links ul{
   list-style: none;
   font-style: italic;
+}
+
+
+.scrollspy-links li{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.scrollspy-links li a{
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.scrollspy li.active a {
+  border-left-color: rgba(255,234,334,1.0);
+  border-left-style: solid;
+  border-left-width: thick;
 }

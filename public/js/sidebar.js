@@ -9,3 +9,7 @@ $('#nav').affix({
         top: $('#nav').offset().top
     }
 });
+
+$('body').scrollspy({
+       target: '.thingy'
+});

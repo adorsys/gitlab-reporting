@@ -1,5 +1,5 @@
 # gitlab-reporting
-Reporting Tool for GitLab projects
+Reporting Tool for GitLab projects, written in Go
 
 ## Install go
 If not already done, install go to get started

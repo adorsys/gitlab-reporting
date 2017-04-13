@@ -1,22 +1,22 @@
 {{ define "sidebar" }}
-<div id="nav" class="nav affix-top scrollspy" data-spy="affix">
-  <div class="row sidebar-content">
-    <div class="col-lg-12 col-md-12 sidebar-brand">
+<div id="nav" class="nav row affix-top scrollspy" data-spy="affix">
+  <difv class="col-lg-12 col-md-12 sidebar-content">
+    <div class=" sidebar-brand">
       <a href="/">
         <i class="fa fa-comments-o">GitLab Reporting</i>
       </a>
     </div>
     <div class="scrollspy-links">
       <ul>
-        <li><a href="#scroll-section1">Statistics</a></li>
-        <li><a href="#scroll-section2">Commits</a></li>
-        <li><a href="#scroll-section3">Merge Requests</a></li>
+        <li><a href="#scroll-section1"> Statistics</a></li>
+        <li><a href="#scroll-section2"> Commits</a></li>
+        <li><a href="#scroll-section3"> Merge Requests</a></li>
       </ul>
     </div>
-    <div class="col-lg-12 col-md-12 newproject-input-fields">
+    <div class="newproject-input-fields">
       <form action="/createReport" method="post">
         {{if .}}
-          <input class="newproject-url" type="text" name="url" value="{{.Project.Url}}" placeholder="Gitlab URL e.g. http://gitlab.example.com"><br>
+          <input class="newproject-url" type="text" name="url" value="{{.Project.Url}}" placeholder="Gitlab URL http://gitlab.example.com"><br>
           <input class="newproject-name" type="text" name="project" value="{{.Project.Project}}" placeholder="namespace/projectname"><br>
           <input class="newproject-token" type="text" name="token" value="{{.Project.Token}}" placeholder="Gitlab Token"><br>
           <input class="newproject-branch" type="text" name="branch" value="{{.Project.Branch}}" placeholder="Optional: Branch"><br>

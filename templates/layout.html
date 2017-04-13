@@ -12,16 +12,14 @@
     <link href="/static/css/report.css" rel="stylesheet">
     <link href="/static/css/sidebar.css" rel="stylesheet">
   </head>
-  <body data-spy="scroll" data-target="#nav" data-offset="50">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-12">
+  <body data-spy="scroll" data-target="#nav" data-offset="0" class="thingy">
+    <div class="row container">
+        <div class="col-lg-3 col-md-3 col-sm-12 sidebar-container pull-left">
           {{ template "sidebar" . }}
         </div>
 
-        <div class="col-lg-8 col-md-8 col-sm-12">
+        <div class="col-lg-9 col-md-9 col-sm-12 content-container pull-right">
           {{ template "content" . }}
-        </div>
       </div>
     </div>
     <script src="/static/js/jquery-2.1.1.min.js"></script>
