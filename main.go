@@ -1,15 +1,18 @@
 package main
 
 import (
-	"flag"
 	"fmt"
 	"net/http"
+	"os"
 )
 
 func main() {
-	port := flag.String("port", "9090", "set the port where the tool shall run")
-	ip := flag.String("ip", "127.0.0.1", "set the ip adress where the tool shall run")
-	flag.Parse()
+	// port := flag.String("port", "9090", "set the port where the tool shall run")
+	// ip := flag.String("ip", "127.0.0.1", "set the ip adress where the tool shall run")
+	// flag.Parse()
+
+	// Supplied by CloudFoundry
+	port := os.Getenv("PORT")
 
 	fmt.Printf("Start reporting tool")
 
@@ -19,10 +22,10 @@ func main() {
 	mux.HandleFunc("/", index)
 	mux.HandleFunc("/createReport", createReport)
 	server := &http.Server{
-		Addr:    *ip + ":" + *port,
+		Addr:    ":" + port,
 		Handler: mux,
 	}
 
-	fmt.Printf("Starting server at: %v:%v", *ip, *port)
+	fmt.Printf("Starting server at: :%v", port)
 	server.ListenAndServe()
 }

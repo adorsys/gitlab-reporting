@@ -1,23 +1,17 @@
 language: go
 sudo: required
-
 services:
-  - docker
-
+- docker
 go:
-  - 1.8
-
+- 1.8
 before_install:
 - docker pull alpine:3.5
-
 script:
 - go test
-# CGO_ENABLED=0 because of http://stackoverflow.com/questions/34729748/installed-go-binary-not-found-in-path-on-alpine-linux-docker
 - GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build
 - docker build -t adorsys/gitlab-reporting .
-
+- docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+- docker push adorsys/gitlab-reporting
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "ci" ]; then
-    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push adorsys/gitlab-reporting;
-    fi
+- if [ "$TRAVIS_BRANCH" == "ci" ]; then docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+  docker push adorsys/gitlab-reporting; fi

@@ -1,0 +1,7 @@
+---
+applications:
+  - name: gitlab-reporting
+    command: gitlab-reporting -ip 0.0.0.0
+    env:
+      GOPACKAGENAME: github.com/adorsys/gitlab-reporting
+      GOVERSION: go1.8

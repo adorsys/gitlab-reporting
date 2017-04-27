@@ -1,0 +1,13 @@
+{
+  "name": "gitlab-reporting",
+  "description": "Measure how much of your code was reviewed via PR",
+  "keywords": [
+    "gitlab",
+    "go",
+    "reporting"
+  ],
+  "image": "heroku/go:1.8",
+  "mount_dir": "src/github.com/adorsys/gitlab-reporting",
+  "website": "http://github.com/adorsys/gitlab-reporting",
+  "repository": "http://github.com/adorsys/gitlab-reporting"
+}

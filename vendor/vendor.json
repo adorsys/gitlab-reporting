@@ -1,0 +1,7 @@
+{
+    "comment": "Dummy vendor json as the heroku buildpack recommends",
+    "rootPath": "github.com/adorsys/gitlab-reporting",
+    "heroku": {
+        "sync": false
+    }
+}
