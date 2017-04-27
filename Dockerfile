@@ -8,4 +8,4 @@ RUN go install
 
 EXPOSE 9090
 
-ENTRYPOINT /go/bin/gitlab-reporting
+ENTRYPOINT /go/bin/gitlab-reporting -ip 0.0.0.0
