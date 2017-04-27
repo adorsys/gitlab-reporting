@@ -1,11 +1,10 @@
-FROM golang
+FROM alpine:3.5
 
-ADD . /go/src/github.com/adorsys/gitlab-reporting
-
-WORKDIR /go/src/github.com/adorsys/gitlab-reporting
-
-RUN go install
+WORKDIR /opt/gitlab-reporting
+COPY ./gitlab-reporting /opt/gitlab-reporting/gitlab-reporting
+COPY ./public /opt/gitlab-reporting/public
+COPY ./templates /opt/gitlab-reporting/templates
 
 EXPOSE 9090
 
-ENTRYPOINT /go/bin/gitlab-reporting -ip 0.0.0.0
+CMD ["/opt/gitlab-reporting/gitlab-reporting", "-ip", "0.0.0.0"]
