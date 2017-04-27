@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/woelkjulian/gitlab-reporting/model"
+	"github.com/adorsys/gitlab-reporting/model"
 )
 
 var perPage = 100

@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/woelkjulian/gitlab-reporting/gitlab"
-	"github.com/woelkjulian/gitlab-reporting/model"
+	"github.com/adorsys/gitlab-reporting/gitlab"
+	"github.com/adorsys/gitlab-reporting/model"
 )
 
 func generateHTML(w http.ResponseWriter, data interface{}, fileNames ...string) {

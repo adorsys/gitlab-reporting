@@ -1,3 +1,6 @@
+.report-wrapper{
+  margin-right: 20px;
+}
 
 .hidectrl{
   color: rgba(31, 132, 191, 1.0);
@@ -21,7 +24,7 @@ legend{
 
 .reports{
   padding-bottom: 20px;
-  width: 95%;
+  /*width: 95%;*/
 }
 
 .report-list{
