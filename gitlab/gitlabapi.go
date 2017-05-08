@@ -18,12 +18,10 @@ func GetAllCommits(pURL, pToken, pBranch, pProj, pVApi *string, page int) ([]mod
 	strProj := strings.Replace(*pProj, "/", "%2F", -1)
 	var url = fmt.Sprint(*pURL, "/api/v", *pVApi, "/projects/", strProj, "/repository/commits")
 
-	if *pBranch != "" {
-		branch := "/:" + *pBranch
-		url += branch
-	}
-
 	url += fmt.Sprint("?per_page=", perPage, "&page=", page)
+	if *pBranch != "" {
+		url += fmt.Sprint("&sha=", *pBranch)
+	}
 
 	fmt.Printf("\nGetCommits(): from %v %v %v", url, *pToken, "...\n")
 
@@ -64,13 +62,11 @@ func GetMergeRequests(pURL, pToken, pBranch, pProj, pVApi *string, page int) ([]
 	strProj := strings.Replace(*pProj, "/", "%2F", -1)
 	var url = fmt.Sprint(*pURL, "/api/v", *pVApi, "/projects/", strProj, "/merge_requests")
 
-	if *pBranch != "" {
-		branch := "/:" + *pBranch
-		url += branch
-	}
-
 	// per_page max is 100
 	url += fmt.Sprint("?per_page=", perPage, "&page=", page)
+	if *pBranch != "" {
+		url += fmt.Sprint("&sha=", *pBranch)
+	}
 
 	fmt.Printf("\nGetMergeRequests(): from %v %v %v", url, *pToken, "...\n")
 
@@ -112,13 +108,11 @@ func GetMergeRequestCommits(pURL, pToken, pBranch, pProj, pVApi *string, mergeRe
 	strProj := strings.Replace(*pProj, "/", "%2F", -1)
 	var url = fmt.Sprint(*pURL, "/api/v", *pVApi, "/projects/", strProj, "/merge_requests/", mergeReqID, "/commits")
 
-	if *pBranch != "" {
-		branch := "/:" + *pBranch
-		url += branch
-	}
-
 	// per_page max is 100
 	url += fmt.Sprint("?per_page=", perPage, "&page=", page)
+	if *pBranch != "" {
+		url += fmt.Sprint("&sha=", *pBranch)
+	}
 
 	fmt.Printf("\nGetMergeRequestCommits(): from %v %v %v", url, *pToken, "...\n")
 
@@ -161,13 +155,11 @@ func GetMergeRequestChanges(pURL, pToken, pBranch, pProj, pVApi *string, mergeRe
 	strProj := strings.Replace(*pProj, "/", "%2F", -1)
 	var url = fmt.Sprint(*pURL, "/api/v", *pVApi, "/projects/", strProj, "/merge_requests/", mergeReqID, "/changes")
 
-	if *pBranch != "" {
-		branch := "/:" + *pBranch
-		url += branch
-	}
-
 	// per_page max is 100
 	url += fmt.Sprint("?per_page=", perPage, "&page=", page)
+	if *pBranch != "" {
+		url += fmt.Sprint("&sha=", *pBranch)
+	}
 
 	fmt.Printf("\nGetMergeRequestChanges(): from %v %v %v", url, *pToken, "...\n")
 
